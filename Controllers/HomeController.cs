@@ -15,18 +15,13 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        var name = new Name{MyName = "Chase Smith"};
+        return Ok(name);
     }
 
     public IActionResult Privacy()
     {
         return View();
-    }
-    [HttpGet]
-    public IActionResult Get()
-    {
-        var name = new Name{id = 1, MyName = "Chase Smith"};
-        return Ok(name);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
