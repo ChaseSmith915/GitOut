@@ -15,10 +15,14 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseAuthorization();
 
 app.UseRouting();
 
-app.UseAuthorization();
+app.UseEndpoints(enpoints => 
+{
+    enpoints.MapControllers();
+});
 
 app.MapControllerRoute(
     name: "default",

@@ -22,6 +22,12 @@ public class HomeController : Controller
     {
         return View();
     }
+    [HttpGet]
+    public IActionResult Get()
+    {
+        var name = new Name{id = 1, MyName = "Chase Smith"};
+        return Ok(name);
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
